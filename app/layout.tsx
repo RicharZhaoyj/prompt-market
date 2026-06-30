@@ -33,16 +33,22 @@ export default function RootLayout({
               </a>
 
               {/* 主导航 */}
-              <nav className="hidden md:flex items-center gap-6">
-                <a href="/" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">首页</a>
-                <a href="/prompts" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">浏览提示词</a>
-                <a href="/submit" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">提交提示词</a>
+              <nav className="hidden md:flex items-center gap-5">
+                <a href="/" className="text-sm font-medium text-gray-700 hover:text-green-600 transition-colors">首页</a>
+                <a href="/prompts" className="text-sm font-medium text-gray-700 hover:text-green-600 transition-colors">浏览提示词</a>
+                <a href="/submit" className="text-sm font-medium text-gray-700 hover:text-green-600 transition-colors">提交提示词</a>
                 <span className="h-4 w-px bg-gray-200" />
-                <a href="https://tools.link.cn" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors flex items-center gap-1">
-                  🛠️ AI工具推荐
+                <a href="https://tools.link.cn" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors flex items-center gap-1">
+                  🛠️ 工具
                 </a>
-                <a href="https://ai.link.cn" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors flex items-center gap-1">
-                  📰 AI热点
+                <a href="https://tool.link.cn" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-cyan-600 hover:text-cyan-700 transition-colors flex items-center gap-1">
+                  ⚡ LTD
+                </a>
+                <a href="https://ai.link.cn" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-purple-600 hover:text-purple-700 transition-colors flex items-center gap-1">
+                  📰 资讯
+                </a>
+                <a href="https://signal.link.cn" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-orange-600 hover:text-orange-700 transition-colors flex items-center gap-1">
+                  ₿ 行情
                 </a>
               </nav>
 
@@ -105,20 +111,34 @@ export default function RootLayout({
 
                 {/* 姊妹站点 */}
                 <div>
-                  <h3 className="font-semibold mb-4 text-gray-900">姊妹站点</h3>
+                  <h3 className="font-semibold mb-4 text-gray-900">🔗 姊妹站点</h3>
                   <ul className="space-y-3 text-sm">
                     <li>
                       <a href="https://tools.link.cn" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors flex items-center gap-2">
-                        <span className="text-lg">🛠️</span>
+                        <span className="text-base">🛠️</span>
                         <span>AI工具推荐</span>
                         <span className="text-xs text-blue-500">↗</span>
                       </a>
                     </li>
                     <li>
-                      <a href="https://ai.link.cn" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors flex items-center gap-2">
-                        <span className="text-lg">📰</span>
+                      <a href="https://tool.link.cn" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-cyan-600 transition-colors flex items-center gap-2">
+                        <span className="text-base">⚡</span>
+                        <span>AI工具LTD</span>
+                        <span className="text-xs text-cyan-500">↗</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://ai.link.cn" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-purple-600 transition-colors flex items-center gap-2">
+                        <span className="text-base">📰</span>
                         <span>AI热点资讯</span>
-                        <span className="text-xs text-blue-500">↗</span>
+                        <span className="text-xs text-purple-500">↗</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://signal.link.cn" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-orange-600 transition-colors flex items-center gap-2">
+                        <span className="text-base">₿</span>
+                        <span>加密货币行情</span>
+                        <span className="text-xs text-orange-500">↗</span>
                       </a>
                     </li>
                   </ul>
@@ -129,13 +149,21 @@ export default function RootLayout({
                 <p className="text-sm text-gray-500">
                   © 2026 PromptMarket. All rights reserved. | AI提示词免费库
                 </p>
-                <div className="flex items-center gap-6 text-sm">
+                <div className="flex items-center gap-4 text-sm flex-wrap justify-center">
                   <a href="https://tools.link.cn" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-blue-600 transition-colors">
                     tools.link.cn
                   </a>
                   <span className="text-gray-300">·</span>
-                  <a href="https://ai.link.cn" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-blue-600 transition-colors">
+                  <a href="https://tool.link.cn" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-cyan-600 transition-colors">
+                    tool.link.cn
+                  </a>
+                  <span className="text-gray-300">·</span>
+                  <a href="https://ai.link.cn" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-purple-600 transition-colors">
                     ai.link.cn
+                  </a>
+                  <span className="text-gray-300">·</span>
+                  <a href="https://signal.link.cn" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-orange-600 transition-colors">
+                    signal.link.cn
                   </a>
                 </div>
               </div>

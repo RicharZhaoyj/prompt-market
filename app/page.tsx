@@ -253,35 +253,50 @@ export default async function Home() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">探索更多AI资源</h2>
-            <p className="text-lg text-gray-600">发现精选工具和最新行业动态，助力你的AI之旅</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">🔗 探索更多资源</h2>
+            <p className="text-lg text-gray-600">发现精选AI工具、最新资讯和行情分析，全方位提升你的效率</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
             {/* AI工具推荐卡片 */}
             <a
               href="https://tools.link.cn"
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-8 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl border-2 border-blue-100 hover:border-blue-300 hover:shadow-xl transition-all"
+              className="group p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl border-2 border-blue-100 hover:border-blue-300 hover:shadow-xl transition-all"
             >
-              <div className="flex items-start gap-5">
-                <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                  <span className="text-2xl">🛠️</span>
-                </div>
-                <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-2">
-                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">AI工具推荐</h3>
-                    <span className="text-xs text-blue-500 font-medium">↗</span>
-                  </div>
-                  <p className="text-sm text-gray-600 mb-3">
-                    精选国内外优秀AI工具，涵盖内容创作、图像生成、编程辅助等多场景
-                  </p>
-                  <div className="flex items-center gap-3 text-xs text-gray-500">
-                    <span className="px-2 py-1 bg-white rounded-full border border-gray-200">tools.link.cn</span>
-                    <span className="text-blue-600 font-medium group-hover:underline">立即浏览 →</span>
-                  </div>
-                </div>
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg mb-4 group-hover:scale-110 transition-transform">
+                <span className="text-2xl">🛠️</span>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-2">
+                AI工具推荐
+              </h3>
+              <p className="text-sm text-gray-600 mb-4">
+                精选国内外优秀AI工具，涵盖多场景
+              </p>
+              <div className="text-xs text-blue-600 font-medium flex items-center gap-1">
+                tools.link.cn <span className="group-hover:translate-x-1 transition-transform">→</span>
+              </div>
+            </a>
+
+            {/* AI工具LTD卡片 */}
+            <a
+              href="https://tool.link.cn"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group p-6 bg-gradient-to-br from-cyan-50 to-teal-50 rounded-2xl border-2 border-cyan-100 hover:border-cyan-300 hover:shadow-xl transition-all"
+            >
+              <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg mb-4 group-hover:scale-110 transition-transform">
+                <span className="text-2xl">⚡</span>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 group-hover:text-cyan-600 transition-colors mb-2">
+                AI工具LTD
+              </h3>
+              <p className="text-sm text-gray-600 mb-4">
+                终身特价AI工具合集，超值优惠
+              </p>
+              <div className="text-xs text-cyan-600 font-medium flex items-center gap-1">
+                tool.link.cn <span className="group-hover:translate-x-1 transition-transform">→</span>
               </div>
             </a>
 
@@ -290,25 +305,40 @@ export default async function Home() {
               href="https://ai.link.cn"
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-8 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl border-2 border-purple-100 hover:border-purple-300 hover:shadow-xl transition-all"
+              className="group p-6 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl border-2 border-purple-100 hover:border-purple-300 hover:shadow-xl transition-all"
             >
-              <div className="flex items-start gap-5">
-                <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                  <span className="text-2xl">📰</span>
-                </div>
-                <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-2">
-                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-purple-600 transition-colors">AI热点资讯</h3>
-                    <span className="text-xs text-purple-500 font-medium">↗</span>
-                  </div>
-                  <p className="text-sm text-gray-600 mb-3">
-                    追踪AI行业最新动态，解读重大技术突破，让你时刻把握行业脉搏
-                  </p>
-                  <div className="flex items-center gap-3 text-xs text-gray-500">
-                    <span className="px-2 py-1 bg-white rounded-full border border-gray-200">ai.link.cn</span>
-                    <span className="text-purple-600 font-medium group-hover:underline">查看资讯 →</span>
-                  </div>
-                </div>
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center shadow-lg mb-4 group-hover:scale-110 transition-transform">
+                <span className="text-2xl">📰</span>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 group-hover:text-purple-600 transition-colors mb-2">
+                AI热点资讯
+              </h3>
+              <p className="text-sm text-gray-600 mb-4">
+                追踪AI行业动态，把握技术脉搏
+              </p>
+              <div className="text-xs text-purple-600 font-medium flex items-center gap-1">
+                ai.link.cn <span className="group-hover:translate-x-1 transition-transform">→</span>
+              </div>
+            </a>
+
+            {/* 加密货币行情卡片 */}
+            <a
+              href="https://signal.link.cn"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group p-6 bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl border-2 border-orange-100 hover:border-orange-300 hover:shadow-xl transition-all"
+            >
+              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-amber-600 rounded-xl flex items-center justify-center shadow-lg mb-4 group-hover:scale-110 transition-transform">
+                <span className="text-2xl">₿</span>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 group-hover:text-orange-600 transition-colors mb-2">
+                加密货币行情
+              </h3>
+              <p className="text-sm text-gray-600 mb-4">
+                实时行情分析、异动监控与策略
+              </p>
+              <div className="text-xs text-orange-600 font-medium flex items-center gap-1">
+                signal.link.cn <span className="group-hover:translate-x-1 transition-transform">→</span>
               </div>
             </a>
           </div>
