@@ -1,16 +1,44 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://prompts.link.cn'),
   title: {
     default: 'PromptMarket - AI提示词免费库 | ChatGPT Midjourney提示词',
     template: '%s | PromptMarket',
   },
   description: '发现、免费使用高质量AI提示词！支持ChatGPT、Midjourney、Stable Diffusion、Claude等主流AI工具。全部免费，内测期间不限量使用！',
   keywords: 'AI提示词, ChatGPT提示词, Midjourney提示词, Stable Diffusion提示词, Claude提示词, 提示词免费, AI工具, 提示词模板, AI写作, AI绘画',
+  alternates: {
+    canonical: 'https://prompts.link.cn',
+  },
+  openGraph: {
+    title: 'PromptMarket - AI提示词免费库',
+    description: '发现、免费使用高质量AI提示词！支持ChatGPT、Midjourney、Stable Diffusion、Claude等主流AI工具。',
+    url: 'https://prompts.link.cn',
+    type: 'website',
+    locale: 'zh_CN',
+    siteName: 'PromptMarket',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'PromptMarket - AI提示词免费库',
+    description: '发现、免费使用高质量AI提示词！支持ChatGPT、Midjourney、Claude等主流AI工具。',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 export default function RootLayout({
@@ -20,6 +48,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="zh-CN">
+      <head>
+        {/* Google Analytics */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID || 'G-XXXXXXXXXX'}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GA_ID || 'G-XXXXXXXXXX'}');
+          `}
+        </Script>
+      </head>
       <body className={inter.className}>
         <div className="min-h-screen flex flex-col">
           {/* Header */}
