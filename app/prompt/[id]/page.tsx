@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getPromptById, getRelatedPrompts, SAMPLE_PROMPTS } from '@/lib/prompts'
+import ShareButtons from '@/components/ShareButtons'
 
 export async function generateStaticParams() {
   return SAMPLE_PROMPTS.map((prompt) => ({
@@ -118,8 +119,31 @@ export default async function PromptDetailPage({ params }: { params: Promise<{ i
     { id: 3, user: '用户丙', avatar: '👤', content: '效果不错，希望能出更多类似的', rating: 4, date: '2026-06-05' },
   ]
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CreativeWork',
+    name: prompt.title,
+    description: prompt.description,
+    category: prompt.category,
+    keywords: prompt.tags?.join(', '),
+    url: `https://prompts.link.cn/prompt/${prompt.id}`,
+    author: {
+      '@type': 'Organization',
+      name: 'Prompts.link.cn',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Prompts.link.cn',
+      url: 'https://prompts.link.cn',
+    },
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* 顶部信息栏 */}
       <div className="bg-white border-b">
         <div className="container mx-auto px-4 py-4">
@@ -332,17 +356,7 @@ export default async function PromptDetailPage({ params }: { params: Promise<{ i
             {/* 分享 */}
             <div className="bg-white rounded-2xl shadow-sm p-6">
               <h3 className="text-lg font-bold text-gray-900 mb-4">分享给朋友</h3>
-              <div className="flex gap-3">
-                <button className="flex-1 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors text-sm">
-                  微信
-                </button>
-                <button className="flex-1 px-4 py-2 bg-blue-400 text-white rounded-lg hover:bg-blue-500 transition-colors text-sm">
-                  微博
-                </button>
-                <button className="flex-1 px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-800 transition-colors text-sm">
-                  复制链接
-                </button>
-              </div>
+              <ShareButtons title={prompt.title} />
             </div>
           </div>
         </div>
