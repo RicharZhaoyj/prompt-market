@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getPromptById, getRelatedPrompts, SAMPLE_PROMPTS } from '@/lib/prompts'
 import ShareButtons from '@/components/ShareButtons'
+import PromptActions from '@/components/PromptActions'
 
 export async function generateStaticParams() {
   return SAMPLE_PROMPTS.map((prompt) => ({
@@ -231,17 +232,7 @@ export default async function PromptDetailPage({ params }: { params: Promise<{ i
                 )}
 
                 {/* 操作按钮 */}
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <button
-                    onClick={() => navigator.clipboard.writeText(prompt.content)}
-                    className="flex-1 px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all shadow-md"
-                  >
-                    复制提示词
-                  </button>
-                  <button className="flex-1 px-6 py-3 bg-white border-2 border-gray-200 text-gray-700 font-semibold rounded-xl hover:border-blue-300 hover:bg-blue-50 transition-all">
-                    收藏提示词
-                  </button>
-                </div>
+                <PromptActions content={prompt.content} />
               </div>
             </div>
 
