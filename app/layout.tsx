@@ -23,6 +23,14 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'zh_CN',
     siteName: 'PromptMarket',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'PromptMarket - AI提示词免费库',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -51,7 +59,7 @@ export default function RootLayout({
       <head>
         {/* Google Analytics */}
         <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID || 'G-K96T0TSZZN'}`}
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID || 'G-1BWZN3C49H'}`}
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -59,7 +67,7 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${process.env.NEXT_PUBLIC_GA_ID || 'G-K96T0TSZZN'}');
+            gtag('config', '${process.env.NEXT_PUBLIC_GA_ID || 'G-1BWZN3C49H'}');
           `}
         </Script>
       </head>

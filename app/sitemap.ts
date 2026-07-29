@@ -15,6 +15,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ]
 
   // 分类页面路由
+  // TODO: 待新增 /category/[name] 路由后，将下方 URL 从查询参数形式（/prompts?category=xxx）
+  // 改为路径形式（/category/xxx），以获得更友好的 SEO 结构。当前因未建立对应路由，暂保持现状。
   const categoryRoutes = CATEGORIES.map((category) => ({
     url: `${baseUrl}/prompts?category=${encodeURIComponent(category.name)}`,
     lastModified: now,

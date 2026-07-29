@@ -139,11 +139,97 @@ export default async function PromptDetailPage({ params }: { params: Promise<{ i
     },
   }
 
+  // Article 结构化数据
+  const articleLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: prompt.title,
+    description: prompt.description,
+    image: [prompt.image_url],
+    datePublished: prompt.created_at,
+    dateModified: prompt.updated_at,
+    author: {
+      '@type': 'Organization',
+      name: 'PromptMarket',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'PromptMarket',
+      url: 'https://prompts.link.cn',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://prompts.link.cn/prompt/${prompt.id}`,
+    },
+  }
+
+  // BreadcrumbList 结构化数据：首页 > 提示词 > {提示词标题}
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: '首页',
+        item: 'https://prompts.link.cn',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: '提示词',
+        item: 'https://prompts.link.cn/prompts',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: prompt.title,
+        item: `https://prompts.link.cn/prompt/${prompt.id}`,
+      },
+    ],
+  }
+
+  // FAQPage 结构化数据
+  const faqLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: '如何使用这个AI提示词？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: '复制提示词内容，粘贴到ChatGPT、Midjourney等AI工具的输入框中，根据需要替换其中的变量（如[主题]、[风格]等），即可生成你想要的内容。',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: '这些提示词是免费的吗？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: '是的，PromptMarket所有提示词均可免费使用，无需注册或付费。我们会持续更新和添加新的提示词。',
+        },
+      },
+    ],
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       {/* 顶部信息栏 */}
       <div className="bg-white border-b">

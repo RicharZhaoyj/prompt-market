@@ -41,7 +41,7 @@ export default async function Home() {
       <div className="bg-gray-50 border-b">
         <div className="container mx-auto px-4 py-2">
           <div className="flex items-center justify-center gap-2 text-xs text-gray-600">
-            <span>最后更新: 2026年6月12日 · 精选32+优质提示词</span>
+            <span>最后更新: 2026年7月29日 · 精选32+优质提示词</span>
           </div>
         </div>
       </div>
