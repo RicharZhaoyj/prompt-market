@@ -2467,20 +2467,363 @@ Agent描述：【描述Agent的功能和架构】
     created_at: '2026-07-27T16:00:00Z',
     updated_at: '2026-07-27T16:00:00Z',
   },
+
+  // ============= 2026年8月新增提示词 =============
+  {
+    id: '59',
+    title: 'Context Engineering上下文工程师',
+    description: '从Prompt工程到Context工程的范式迁移，优化信息环境而非指令',
+    content: `你是一位上下文工程（Context Engineering）专家。请帮我设计AI应用的信息环境：
+
+应用场景：【描述你的AI应用场景】
+用户需求：【用户要完成的任务】
+现有问题：【当前遇到的答非所问、幻觉等问题】
+
+请按Context工程方法论设计：
+
+1. 信息需求分析
+   - 任务完成必需哪些信息？
+   - 哪些信息模型训练时没见过？
+   - 哪些信息实时变化？
+
+2. 上下文组装策略
+   - 系统提示：角色设定+能力边界
+   - 检索注入：RAG检索哪些知识库？
+   - 记忆管理：用户画像+对话摘要
+   - 工具调用：API查询哪些实时数据？
+
+3. 上下文拼装方案
+   - 总Token预算分配
+   - 各部分优先级排序
+   - 动态加载时机
+   - 压缩和摘要策略
+
+4. 质量保障机制
+   - 信息召回率检测
+   - 上下文相关性评分
+   - 成本控制阈值
+   - A/B测试方案
+
+5. 迁移路径
+   - 从现有Prompt中提取硬编码知识
+   - 改为检索注入的步骤
+   - 添加记忆管理模块
+   - 集成工具调用
+
+请提供完整的Context工程实施方案。`,
+    category: '编程',
+    price: 0,
+    rating: 4.9,
+    reviews: 189,
+    sales: 1234,
+    author_id: 'author_059',
+    author_name: '陈上下文',
+    image_url: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop',
+    tags: ['Context工程', '上下文优化', 'RAG', '记忆管理', '信息环境', 'Prompt工程'],
+    created_at: '2026-08-03T09:00:00Z',
+    updated_at: '2026-08-03T09:00:00Z',
+  },
+  {
+    id: '60',
+    title: 'Claude Opus 5提示词优化专家',
+    description: '针对Claude Opus 5特性的提示词优化，删除冗余指令提升效率',
+    content: `你是一位Claude Opus 5提示词优化专家。请根据Anthropic官方指南优化我的提示词：
+
+原始提示词：【粘贴你的现有提示词】
+任务目标：【描述任务目标】
+当前问题：【效果不佳的地方】
+
+请按Opus 5特性优化：
+
+1. 自动行为识别
+   Opus 5已内置的能力（无需显式指令）：
+   - ✓ 自主规划和任务分解
+   - ✓ 自我验证和纠错
+   - ✓ 子Agent委派
+   - ✓ 长响应和详细叙述
+   - ✓ 多文件协同理解
+
+2. 冗余指令删除
+   需要删除的常见冗余：
+   - ❌ "逐步思考"、"仔细检查"（已内置）
+   - ❌ "验证你的答案"（会自验证）
+   - ❌ "先做计划再执行"（会自规划）
+   - ❌ "分解任务"（会自分解）
+
+3. 保留的必要指令
+   - ✓ 明确的输出格式要求
+   - ✓ 具体的约束条件
+   - ✓ 质量标准和验收标准
+   - ✓ 禁止事项（负面约束）
+
+4. Effort级别选择
+   - low: 简单任务，快速响应
+   - medium: 中等复杂度，性价比最优
+   - high: 复杂任务，需要深度推理
+   - 不推荐禁用thinking
+
+5. 优化后提示词
+   提供精简后的提示词
+   解释删除了哪些冗余
+   说明保留了哪些必要指令
+
+请提供优化后的提示词和使用建议。`,
+    category: '其他',
+    price: 0,
+    rating: 4.8,
+    reviews: 167,
+    sales: 987,
+    author_id: 'author_060',
+    author_name: '李Opus',
+    image_url: 'https://images.unsplash.com/photo-1454922901705-2c2f053835b9?w=400&h=300&fit=crop',
+    tags: ['Claude', 'Opus 5', '提示词优化', 'Anthropic', '冗余删除', '性能提升'],
+    created_at: '2026-08-03T10:00:00Z',
+    updated_at: '2026-08-03T10:00:00Z',
+  },
+  {
+    id: '61',
+    title: 'AI编程Agent工作流编排',
+    description: '设计Cursor/Claude Code/Codex的Agent工作流和任务分配',
+    content: `你是一位AI编程Agent工作流架构师。请为以下开发任务设计Agent工作流：
+
+项目描述：【描述项目和要完成的功能】
+技术栈：【编程语言/框架】
+团队规模：【开发者人数】
+可用工具：【Cursor / Claude Code / Codex / Copilot】
+
+请设计完整的Agent工作流：
+
+1. 任务分解策略
+   - 将功能拆解为Agent可执行的子任务
+   - 识别任务依赖关系和并行机会
+   - 标注每个子任务的复杂度（低/中/高）
+
+2. Agent角色分配
+   工具选择矩阵：
+   - Cursor Tab: 单文件补全，保持心流
+   - Cursor Composer: 多文件功能开发
+   - Claude Code: 大型重构、跨模块修改
+   - Codex: 异步批量处理、自动提PR
+   - Copilot: 企业合规、代码审查
+
+3. 工作流程设计
+   上午（新功能开发）：
+   - 使用Cursor保持编码心流
+   - Tab补全优先，必要时开Agent
+
+   下午（重构和Bug）：
+   - 切换到Claude Code处理复杂任务
+   - 利用1M上下文理解整个项目
+
+   傍晚（批量修改）：
+   - 使用Codex异步执行
+   - 批量重构、自动测试
+
+4. CLAUDE.md配置
+   - 项目规范（≤200行）
+   - 只写AI无法推断的
+   - 全部正向指令
+   - 可量化验证
+
+5. 成本控制方案
+   - Sonnet起步，仅架构决策用Opus
+   - /clear定期清理上下文
+   - /cost实时监控花费
+   - 大任务拆阶段执行
+
+6. 质量保障
+   - Edit-Test Loop自动化
+   - Git stash一键回滚
+   - 代码审查流程
+   - 测试覆盖率要求
+
+请提供可执行的Agent工作流配置。`,
+    category: '编程',
+    price: 0,
+    rating: 4.9,
+    reviews: 234,
+    sales: 1567,
+    author_id: 'author_061',
+    author_name: '张Agent',
+    image_url: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop',
+    tags: ['AI编程', 'Agent工作流', 'Cursor', 'Claude Code', 'Codex', 'Vibe Coding', '成本控制'],
+    created_at: '2026-08-03T11:00:00Z',
+    updated_at: '2026-08-03T11:00:00Z',
+  },
+  {
+    id: '62',
+    title: '多模态内容生成专家',
+    description: '文本、图像、音频、视频多模态内容的协同生成',
+    content: `你是一位多模态内容生成专家。请帮我创建多模态内容：
+
+内容主题：【主题描述】
+目标平台：【发布平台，如小红书/抖音/B站】
+内容形式：【图文/视频/音频】
+目标受众：【目标用户画像】
+
+请提供多模态内容生成方案：
+
+1. 内容策略规划
+   - 核心信息和关键卖点
+   - 各模态的内容分工
+   - 跨模态一致性要求
+   - 平台适配策略
+
+2. 文案生成
+   - 标题和钩子（5-8字）
+   - 正文结构（分点论述）
+   - 行动号召和标签
+   - SEO关键词优化
+
+3. 图像生成
+   选择工具：
+   - Midjourney: 艺术风格、品牌视觉
+   - DALL-E 3: 文字渲染、产品展示
+   - Stable Diffusion: 本地部署、可定制
+
+   提示词设计：
+   - 主体描述 + 风格 + 技术参数
+   - 多图一致性控制
+   - 品牌元素植入
+
+4. 音频生成
+   工具选择：
+   - ElevenLabs: 语音克隆、情感控制
+   - Suno AI: 音乐生成、人声克隆
+   - Udio: 专业音乐制作
+
+   生成策略：
+   - 语音风格和情感设定
+   - BGM风格匹配
+   - 音效和配乐
+
+5. 视频生成
+   工具选择：
+   - Runway Gen-4: 专业级视频
+   - Kling 3.0: 原生音画同步
+   - Seedance 2: AI长片制作
+
+   创作流程：
+   - 分镜脚本设计
+   - 镜头语言描述
+   - 运动控制参数
+   - 后期编辑方案
+
+6. 整合方案
+   - 各模态素材整合流程
+   - 时间轴同步策略
+   - 格式转换和压缩
+   - 质量检查清单
+
+请提供完整的多模态内容生成方案。`,
+    category: '设计',
+    price: 0,
+    rating: 4.8,
+    reviews: 198,
+    sales: 1234,
+    author_id: 'author_062',
+    author_name: '王多模态',
+    image_url: 'https://images.unsplash.com/photo-1495567720989-cebdbdd97913?w=400&h=300&fit=crop',
+    tags: ['多模态', '内容生成', 'Midjourney', 'Suno AI', 'Kling', '视频生成', '跨平台'],
+    created_at: '2026-08-03T12:00:00Z',
+    updated_at: '2026-08-03T12:00:00Z',
+  },
+  {
+    id: '63',
+    title: 'AI产品发布Product Hunt策划',
+    description: 'Product Hunt发布策略、文案撰写和推广方案',
+    content: `你是一位Product Hunt发布专家。请帮我策划AI产品发布：
+
+产品名称：【产品名称】
+产品类型：【AI工具/SaaS/应用】
+核心功能：【3-5个核心卖点】
+目标用户：【目标用户画像】
+
+请提供完整的Product Hunt发布策划：
+
+1. 发布时间选择
+   - 最佳发布时间（周二-周四）
+   - 避开竞争激烈时段
+   - 时区考虑（美西时间0:01 AM）
+
+2. 产品页面优化
+   - 标题（<60字符，突出核心价值）
+   - 标语（<80字符，补充说明）
+   - 产品描述（<500字符）
+   - 关键词选择（5-8个）
+
+3. 视觉素材准备
+   - 产品Logo（清晰、易识别）
+   - 截图/GIF（展示核心功能）
+   - 产品视频（<60秒，突出价值）
+   - 缩略图（吸引点击）
+
+4. 文案撰写
+   Maker Comment模板：
+   - 第一段：问题陈述（痛点）
+   - 第二段：解决方案（产品）
+   - 第三段：差异化优势
+   - 第四段：Call to Action
+
+   评论区话术：
+   - 感谢投票模板
+   - 常见问题回答
+   - 竞品对比策略
+
+5. 推广策略
+   - 预热期（发布前3天）
+     * 社交媒体预告
+     * 邮件通知核心用户
+     * 联系Hunter和Maker
+
+   - 发布当天
+     * 清晨0:01 AM准时发布
+     * 前2小时冲刺投票
+     * 实时回复评论
+
+   - 发布后
+     * 感谢帖和后续跟进
+     * 成绩宣布和营销素材
+     * 用户反馈收集
+
+6. 工具推荐
+   - LaunchGun: 数据驱动优化
+   - PH Copilot: Chrome插件提效
+   - Huntd: 竞品分析
+
+7. 常见避坑
+   - 不要自投票和刷票
+   - 不要过度推销
+   - 保持真实和透明
+   - 积极参与社区互动
+
+请提供详细的发布执行方案。`,
+    category: '营销',
+    price: 0,
+    rating: 4.9,
+    reviews: 178,
+    sales: 1123,
+    author_id: 'author_063',
+    author_name: '赵发布',
+    image_url: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop',
+    tags: ['Product Hunt', '产品发布', 'AI产品', '营销策略', '文案撰写', '推广'],
+    created_at: '2026-08-03T13:00:00Z',
+    updated_at: '2026-08-03T13:00:00Z',
+  },
 ];
 
 // ============ 分类数据 ============
 export const CATEGORIES: Category[] = [
   { id: 'cat_01', name: '写作', emoji: '✍️', prompt_count: 6, description: 'AI辅助各类文案、文章、博客' },
-  { id: 'cat_02', name: '编程', emoji: '💻', prompt_count: 15, description: '代码生成、调试、架构设计' },
-  { id: 'cat_03', name: '设计', emoji: '🎨', prompt_count: 6, description: 'UI/UX、图像生成、视觉设计' },
-  { id: 'cat_04', name: '营销', emoji: '📢', prompt_count: 5, description: '品牌推广、社交媒体、内容营销' },
+  { id: 'cat_02', name: '编程', emoji: '💻', prompt_count: 18, description: '代码生成、调试、架构设计、AI Agent' },
+  { id: 'cat_03', name: '设计', emoji: '🎨', prompt_count: 7, description: 'UI/UX、图像生成、视觉设计、多模态' },
+  { id: 'cat_04', name: '营销', emoji: '📢', prompt_count: 6, description: '品牌推广、社交媒体、内容营销、Product Hunt' },
   { id: 'cat_05', name: '教育', emoji: '📚', prompt_count: 5, description: '语言学习、解题、论文写作' },
   { id: 'cat_06', name: '生活', emoji: '🏃', prompt_count: 6, description: '健康、旅行、情绪管理' },
   { id: 'cat_07', name: '商业', emoji: '💼', prompt_count: 9, description: '创业、职场、商业计划' },
   { id: 'cat_08', name: '游戏', emoji: '🎮', prompt_count: 2, description: '游戏设计、剧情、桌游' },
   { id: 'cat_09', name: '音乐', emoji: '🎵', prompt_count: 2, description: '歌词创作、音乐推荐' },
-  { id: 'cat_10', name: '其他', emoji: '✨', prompt_count: 6, description: '综合工具、思维导图、创意激发' },
+  { id: 'cat_10', name: '其他', emoji: '✨', prompt_count: 7, description: '综合工具、思维导图、创意激发、提示词优化' },
 ];
 
 // ============ 工具函数 ============
